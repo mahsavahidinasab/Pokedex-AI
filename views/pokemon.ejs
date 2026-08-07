@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%= pokemon.name %> | Pokedex</title>
+  </head>
+  <body>
+    <header>
+      <a href="/">Back to Pokemon</a>
+      <%- include('partials/navigation') %>
+    </header>
+
+    <main>
+      <h1><%= pokemon.name %></h1>
+      <p>National Pokedex number: <%= pokemon.id %></p>
+
+      <% const image = pokemon.sprites.other?.['official-artwork']?.front_default || pokemon.sprites.front_default; %>
+      <% if (image) { %>
+        <img src="<%= image %>" alt="<%= pokemon.name %>" />
+      <% } %>
+
+      <h2>Details</h2>
+      <dl>
+        <dt>Types</dt>
+        <dd><%= pokemon.types.map((entry) => entry.type.name).join(', ') %></dd>
+        <dt>Height</dt>
+        <dd><%= pokemon.height %> dm</dd>
+        <dt>Weight</dt>
+        <dd><%= pokemon.weight %> hg</dd>
+      </dl>
+
+      <h2>Stats</h2>
+      <ul>
+        <% pokemon.stats.forEach((entry) => { %>
+          <li><%= entry.stat.name %>: <%= entry.base_stat %></li>
+        <% }) %>
+      </ul>
+    </main>
+  </body>
+</html>

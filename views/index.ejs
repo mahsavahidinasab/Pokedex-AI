@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pokedex</title>
+  </head>
+  <body>
+    <header>
+      <h1>Pokedex</h1>
+      <%- include('partials/navigation') %>
+    </header>
+
+    <main>
+      <h2>Pokemon</h2>
+      <p>Showing <%= pokemon.length %> of <%= count %> Pokemon.</p>
+
+      <ul>
+        <% pokemon.forEach((entry) => { %>
+          <li>
+            <a href="/pokemon/<%= encodeURIComponent(entry.name) %>">
+              <%= entry.name %>
+            </a>
+          </li>
+        <% }) %>
+      </ul>
+
+      <nav aria-label="Pokemon pagination">
+        <% if (offset > 0) { %>
+          <a href="/?limit=<%= limit %>&offset=<%= previousOffset %>">Previous</a>
+        <% } %>
+
+        <% if (nextOffset < count) { %>
+          <a href="/?limit=<%= limit %>&offset=<%= nextOffset %>">Next</a>
+        <% } %>
+      </nav>
+    </main>
+  </body>
+</html>
