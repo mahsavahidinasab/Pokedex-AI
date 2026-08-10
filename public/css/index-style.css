@@ -1,0 +1,185 @@
+
+/* =========================
+   General
+========================= */
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f6f8;
+  color: #333;
+  margin: 0;
+  padding: 40px 20px;
+}
+
+main {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+h1 {
+  text-align: center;
+  color: #e3350d;
+  margin-bottom: 10px;
+}
+
+h2 {
+  color: #333;
+  margin-bottom: 20px;
+}
+
+p {
+  color: #666;
+}
+
+
+/* =========================
+   Favorites Section
+========================= */
+
+.favorites {
+  background: white;
+  padding: 25px;
+  margin: 30px 0;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.favorites h2 {
+  margin-top: 0;
+  color: #e3350d;
+}
+
+.favorites ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.favorites li {
+  margin-bottom: 10px;
+}
+
+.favorites a {
+  display: block;
+  padding: 12px 15px;
+  background-color: #f8f8f8;
+  border-radius: 8px;
+  color: #333;
+  text-decoration: none;
+  transition: 0.2s ease;
+}
+
+.favorites a:hover {
+  background-color: #e3350d;
+  color: white;
+  transform: translateX(5px);
+}
+
+
+/* =========================
+   Sign In Message
+========================= */
+
+.login-message {
+  background: white;
+  padding: 20px;
+  margin: 30px 0;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.login-message a {
+  color: #e3350d;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.login-message a:hover {
+  text-decoration: underline;
+}
+
+
+/* =========================
+   Pokemon List
+========================= */
+
+.pokemon-list {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 15px;
+}
+
+.pokemon-list li {
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08);
+  transition: 0.2s ease;
+}
+
+.pokemon-list li:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.12);
+}
+
+.pokemon-list a {
+  display: block;
+  padding: 18px;
+  text-align: center;
+  color: #333;
+  text-decoration: none;
+  font-weight: bold;
+  text-transform: capitalize;
+}
+
+.pokemon-list a:hover {
+  color: #e3350d;
+}
+
+
+/* =========================
+   Pagination
+========================= */
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.pagination a {
+  display: inline-block;
+  padding: 12px 25px;
+  background-color: #e3350d;
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: bold;
+  transition: 0.2s ease;
+}
+
+.pagination a:hover {
+  background-color: #c6280b;
+  transform: translateY(-2px);
+}
+
+
+/* =========================
+   Mobile
+========================= */
+
+@media (max-width: 600px) {
+  body {
+    padding: 25px 15px;
+  }
+
+  .pokemon-list {
+    grid-template-columns: 1fr;
+  }
+
+  .favorites {
+    padding: 20px;
+  }
+}

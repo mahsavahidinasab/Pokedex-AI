@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pokedex</title>
+  <link rel="stylesheet" href="/css/index-style.css">
+  </head>
+  <body>
+    <%- include('partials/navigation') %>
+
+<main>
+  <h1>Pokedex</h1>
+
+  <p>Browse <%= count %> Pokemon.</p>
+
+  <!-- User's Favorites -->
+
+<% if (currentUser) { %>
+
+  <section class="favorites">
+    <h2>My Favorites</h2>
+
+    <% if (favorites && favorites.length > 0) { %>
+
+      <ul>
+        <% favorites.forEach((favorite) => { %>
+          <li>
+            <a href="/pokemon/<%= encodeURIComponent(favorite.pokemonName) %>">
+              <%= favorite.pokemonName %>
+            </a>
+          </li>
+        <% }) %>
+      </ul>
+
+    <% } else { %>
+
+      <p>You haven't added any Pokemon to your favorites yet.</p>
+
+    <% } %>
+  </section>
+
+<% } else { %>
+
+  <div class="login-message">
+    <p>
+      <a href="/login">Sign in</a> to save Pokemon to your favorites.
+    </p>
+  </div>
+
+<% } %>
+
+
+<ul class="pokemon-list">
+  <% pokemon.forEach((entry) => { %>
+    <li>
+      <a href="/pokemon/<%= encodeURIComponent(entry.name) %>">
+        <%= entry.name %>
+      </a>
+    </li>
+  <% }) %>
+</ul>
+
+
+<% if (offset + limit < count) { %>
+  <div class="pagination">
+    <a href="/?limit=<%= limit %>&offset=<%= offset + limit %>">
+      Next
+    </a>
+  </div>
+<% } %>  
+</main>
+
+
+  </body>
+</html>

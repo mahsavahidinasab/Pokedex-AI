@@ -1,0 +1,108 @@
+
+/* =========================
+   Login Page
+========================= */
+
+body {
+  margin: 0;
+  padding: 40px 20px;
+  font-family: Arial, sans-serif;
+  background-color: #f4f6f8;
+  color: #333;
+}
+
+main {
+  max-width: 450px;
+  margin: 80px auto;
+  padding: 40px;
+  background-color: white;
+  border-radius: 16px;
+  text-align: center;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+
+/* =========================
+   Heading
+========================= */
+
+main h1 {
+  margin-top: 0;
+  margin-bottom: 15px;
+  color: #e3350d;
+  font-size: 32px;
+}
+
+
+/* =========================
+   Description
+========================= */
+
+main p {
+  color: #666;
+  line-height: 1.6;
+}
+
+
+/* =========================
+   Google Sign In Button
+========================= */
+
+main p a[href="/auth/google"] {
+  display: inline-block;
+  margin: 15px 0;
+  padding: 13px 25px;
+  background-color: #4285f4;
+  color: white;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: all 0.2s ease;
+}
+
+main p a[href="/auth/google"]:hover {
+  background-color: #3367d6;
+  transform: translateY(-2px);
+}
+
+
+/* =========================
+   Register Link
+========================= */
+
+main p:last-child {
+  margin-top: 25px;
+  font-size: 14px;
+}
+
+main p:last-child a {
+  color: #e3350d;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+main p:last-child a:hover {
+  text-decoration: underline;
+}
+
+
+/* =========================
+   Mobile
+========================= */
+
+@media (max-width: 600px) {
+
+  body {
+    padding: 20px 15px;
+  }
+
+  main {
+    margin: 40px auto;
+    padding: 30px 20px;
+  }
+
+  main h1 {
+    font-size: 28px;
+  }
+
+}

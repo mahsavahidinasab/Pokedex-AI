@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%= pokemon.name %> | Pokedex</title>
+    <link rel="stylesheet" href="/css/pokemon.css">
+  </head>
+  <body>
+    <%- include('partials/navigation') %>
+
+<main>
+
+  <h1><%= pokemon.name %></h1>
+
+  <% const imageUrl =
+    pokemon?.sprites?.other?.['official-artwork']?.front_default ||
+    pokemon?.sprites?.front_default;
+  %>
+
+  <% if (imageUrl) { %>
+    <img
+      src="<%= imageUrl %>"
+      alt="<%= pokemon.name %>"
+      class="pokemon-image"
+    >
+  <% } %>
+
+
+  <!-- Favorite Button -->
+
+  <% if (currentUser) { %>
+
+    <% if (isFavorite) { %>
+
+      <form
+        action="/pokemon/<%= encodeURIComponent(pokemon.name) %>/favorite/delete"
+        method="POST"
+      >
+        <button type="submit" class="favorite-button">
+          − Remove from favorites
+        </button>
+      </form>
+
+    <% } else { %>
+
+      <form
+        action="/pokemon/<%= encodeURIComponent(pokemon.name) %>/favorite"
+        method="POST"
+      >
+        <button type="submit" class="favorite-button">
+          + Add to favorites
+        </button>
+      </form>
+
+    <% } %>
+
+  <% } else { %>
+
+    <p>
+      <a href="/login">Sign in to add favorites</a>
+    </p>
+
+  <% } %>
+
+
+  <!-- Pokémon Details -->
+
+  <section class="pokemon-details">
+
+    <h2>Details</h2>
+
+    <div class="details-grid">
+      <div class="detail-card">
+        <h3>Height</h3>
+        <p><%= pokemon.height %></p>
+      </div>
+
+      <div class="detail-card">
+        <h3>Weight</h3>
+        <p><%= pokemon.weight %></p>
+      </div>
+    </div>
+
+  </section>
+
+
+  <!-- Pokémon Stats -->
+
+  <section class="pokemon-stats">
+
+    <h2>Stats</h2>
+
+    <ul>
+      <% pokemon.stats.forEach((entry) => { %>
+        <li>
+          <span class="stat-name">
+            <%= entry.stat.name %>
+          </span>
+
+          <span class="stat-value">
+            <%= entry.base_stat %>
+          </span>
+        </li>
+      <% }) %>
+    </ul>
+
+  </section>
+
+
+  <!-- Back to Pokedex -->
+
+  <a href="/" class="back-button">
+    ← Back to Pokedex
+  </a>
+
+</main>
+
+  </body>
+</html>

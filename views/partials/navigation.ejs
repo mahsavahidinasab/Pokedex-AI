@@ -1,0 +1,14 @@
+<head>
+  <link rel="stylesheet" href="/css/navbar.css">
+</head>
+<body>
+  <nav aria-label="Main navigation">
+  <% if (typeof currentUser !== 'undefined' && currentUser) { %>
+    <span>Signed in as <%= currentUser.displayName || currentUser.email || 'Google user' %></span>
+    <a href="/logout">Log out</a>
+  <% } else { %>
+    <a href="/auth/google">Sign in with Google</a>
+  <% } %>
+</nav>
+</body>
+

@@ -1,0 +1,91 @@
+
+/* =========================
+   Main Navigation
+========================= */
+
+nav[aria-label="Main navigation"] {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 15px 30px;
+  background-color: #333;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 15px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+
+/* =========================
+   User Information
+========================= */
+
+nav[aria-label="Main navigation"] span {
+  color: white;
+  font-size: 14px;
+}
+
+
+/* =========================
+   Navigation Links
+========================= */
+
+nav[aria-label="Main navigation"] a {
+  display: inline-block;
+  padding: 9px 16px;
+  border-radius: 7px;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 14px;
+  transition: all 0.2s ease;
+}
+
+
+/* Sign In */
+
+nav[aria-label="Main navigation"] a[href="/auth/google"] {
+  background-color: #4285f4;
+}
+
+nav[aria-label="Main navigation"] a[href="/auth/google"]:hover {
+  background-color: #3367d6;
+  transform: translateY(-1px);
+}
+
+
+/* Log Out */
+
+nav[aria-label="Main navigation"] a[href="/logout"] {
+  background-color: #e3350d;
+}
+
+nav[aria-label="Main navigation"] a[href="/logout"]:hover {
+  background-color: #c6280b;
+  transform: translateY(-1px);
+}
+
+
+/* =========================
+   Mobile
+========================= */
+
+@media (max-width: 600px) {
+
+  nav[aria-label="Main navigation"] {
+    padding: 12px 15px;
+    flex-direction: column;
+    align-items: stretch;
+    text-align: center;
+  }
+
+  nav[aria-label="Main navigation"] span {
+    margin-bottom: 5px;
+  }
+
+  nav[aria-label="Main navigation"] a {
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+}

@@ -1,0 +1,255 @@
+
+/* =========================
+   Pokémon Detail Page
+========================= */
+
+body {
+  margin: 0;
+  padding: 40px 20px;
+  font-family: Arial, sans-serif;
+  background-color: #f4f6f8;
+  color: #333;
+}
+
+main {
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: center;
+  background-color: white;
+  padding: 35px;
+  border-radius: 16px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+
+/* =========================
+   Pokémon Image
+========================= */
+
+.pokemon-image {
+  width: 300px;
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 20px auto 30px;
+  transition: transform 0.3s ease;
+}
+
+.pokemon-image:hover {
+  transform: scale(1.08);
+}
+
+
+/* =========================
+   Favorite Button
+========================= */
+
+.favorite-button {
+  border: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  background-color: #e3350d;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.favorite-button:hover {
+  background-color: #c6280b;
+  transform: translateY(-2px);
+}
+
+.favorite-button:active {
+  transform: translateY(0);
+}
+
+
+/* =========================
+   Sign In Link
+========================= */
+
+main p {
+  margin-top: 20px;
+  color: #666;
+}
+
+main p a {
+  color: #e3350d;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+main p a:hover {
+  text-decoration: underline;
+}
+
+
+/* =========================
+   Mobile
+========================= */
+
+@media (max-width: 600px) {
+  body {
+    padding: 20px 15px;
+  }
+
+  main {
+    padding: 25px 20px;
+  }
+
+  .pokemon-image {
+    width: 220px;
+  }
+
+  .favorite-button {
+    width: 100%;
+    padding: 14px;
+  }
+}
+
+
+/* =========================
+   Back Button
+========================= */
+
+.back-button {
+  display: inline-block;
+  margin-top: 25px;
+  padding: 10px 20px;
+  border-radius: 8px;
+  background-color: #555;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  transition: all 0.2s ease;
+}
+
+.back-button:hover {
+  background-color: #333;
+  transform: translateY(-2px);
+}
+
+
+/* =========================
+   Pokémon Details
+========================= */
+
+.pokemon-details,
+.pokemon-stats {
+  margin-top: 35px;
+  padding: 25px;
+  background-color: #f8f9fa;
+  border-radius: 12px;
+}
+
+.pokemon-details h2,
+.pokemon-stats h2 {
+  margin-top: 0;
+  margin-bottom: 20px;
+  color: #e3350d;
+}
+
+
+/* =========================
+   Height & Weight
+========================= */
+
+.details-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+}
+
+.detail-card {
+  background-color: white;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+
+.detail-card h3 {
+  margin: 0 0 8px;
+  font-size: 16px;
+  color: #666;
+}
+
+.detail-card p {
+  margin: 0;
+  font-size: 20px;
+  font-weight: bold;
+  color: #333;
+}
+
+
+/* =========================
+   Pokémon Stats
+========================= */
+
+.pokemon-stats ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.pokemon-stats li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 15px;
+  margin-bottom: 8px;
+  background-color: white;
+  border-radius: 8px;
+}
+
+.stat-name {
+  text-transform: capitalize;
+  font-weight: bold;
+  color: #555;
+}
+
+.stat-value {
+  font-weight: bold;
+  color: #e3350d;
+}
+
+
+/* =========================
+   Back Button
+========================= */
+
+.back-button {
+  display: inline-block;
+  margin-top: 25px;
+  padding: 10px 20px;
+  border-radius: 8px;
+  background-color: #555;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  transition: all 0.2s ease;
+}
+
+.back-button:hover {
+  background-color: #333;
+  transform: translateY(-2px);
+}
+
+
+/* =========================
+   Mobile
+========================= */
+
+@media (max-width: 600px) {
+
+  .details-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .pokemon-details,
+  .pokemon-stats {
+    padding: 20px;
+  }
+
+}
