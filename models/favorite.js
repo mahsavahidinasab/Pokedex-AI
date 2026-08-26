@@ -35,4 +35,4 @@ favoriteSchema.index(
   { unique: true }
 );
 
-module.exports = mongoose.model('Favorite', favoriteSchema);
+module.exports = mongoose.model('favorite', favoriteSchema);

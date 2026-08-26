@@ -1,7 +1,7 @@
 const express = require('express');
 const { getPokemonList, getPokemonByName } = require('../services/pokeapi');
 
-const Favorite = require('../models/Favorite');
+const Favorite = require('../models/favorite');
 const ensureAuthenticated = require('../middleware/ensureAuthenticated');
 
 const router = express.Router();
