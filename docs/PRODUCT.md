@@ -90,11 +90,6 @@ Done when:
 - Each favorite can be opened for more details.
 - An empty collection has a friendly, informative empty state.
 - The page is unavailable to signed-out visitors except through signing in.
--  a Favorite model (userId, pokemonId, pokemonName, sprite), 
-- POST /pokemon/:name/favorite and 
-- GET /favorites (both behind ensureAuthenticated),
-- and a way to un-favorite.
-
 
 ### Navigation and feedback
 
