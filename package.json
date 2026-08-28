@@ -1,7 +1,7 @@
 {
   "name": "express-ai-practice",
   "version": "1.0.0",
-  "description": "",
+  "description": "A full-stack Pokémon web application built with **Node.js, Express, MongoDB, EJS, and PokeAPI**. Users can browse Pokémon, view detailed information, create an account using Google authentication, and save their favorite Pokémon.",
   "license": "ISC",
   "author": "",
   "type": "commonjs",
@@ -27,5 +27,14 @@
   },
   "devDependencies": {
     "nodemon": "^3.1.14"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mahsavahidinasab/Pokedex-AI.git"
+  },
+  "keywords": [],
+  "bugs": {
+    "url": "https://github.com/mahsavahidinasab/Pokedex-AI/issues"
+  },
+  "homepage": "https://github.com/mahsavahidinasab/Pokedex-AI#readme"
 }
